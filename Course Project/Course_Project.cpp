@@ -17,6 +17,7 @@ using namespace std;
 
 const int MAX_SIZE = 50;
 
+// Holds Pokemon Card information
 struct PokemonCard {
     string name;
     string type;
@@ -25,7 +26,21 @@ struct PokemonCard {
     float cost;
 };
 
+// Function Prototypes
+void addCard(PokemonCard cards[], int &count);
+void displayCards(const PokemonCard cards[], int count);
+int linearSearch(const PokemonCard cards[], int count, string name);
+void bubbleSort(const PokemonCard cards[], int count);
+void removeCard(const PokemonCard cards[], int& count);
+void displayMenu();
+
+
+
 int main() {
+    PokemonCard cards[MAX_SIZE];
+    int count = 0;
+    int choice = 1;
+
 
     return 0;
 }
