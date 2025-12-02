@@ -81,4 +81,66 @@ int main() {
     return 0;
 }
 
+void addCard(PokemonCard cards[], int& count)
+{
+    if (count >= MAX_SIZE) {
+        cout << "Collection is too full!!!";
+        return;
+    }
+    cout << "Enter Pokemon Name: ";
+    getline(cin, cards[count].name);
+    cout << "Enter Type of Pokemon: ";
+    getline(cin, cards[count].type);
+    cout << "Enter Cost of Card: ";
+    cin >> cards[count].cost;
+    cin.ignore();
+    cout << "Enter HP of Card: ";
+    cin >> cards[count].hp;
+    count++;
+    cout << "Card Successfully Added!";
+}
 
+void displayCards(const PokemonCard cards[], int count)
+{
+    if (!count) { cout << "No cards to display.\n"; return; }
+    for (int i = 0; i < count; i++)
+        cout << i + 1 << ". " << cards[i].name << " | "
+        << cards[i].type << " | $" << cards[i].cost
+        << " | " << cards[i].hp << endl;
+}
+
+int linearSearch(const PokemonCard cards[], int count, string name)
+{
+    for (int i = 0; i < count; i++)
+        if (cards[i].name == name) return i;
+    return -1;
+}
+
+void bubbleSort(const PokemonCard cards[], int count)
+{
+    for (int i = 0; i < count - 1; i++)
+        for (int j = 0; j < count - i - 1; j++)
+            if (cards[j].cost > cards[j + 1].cost)
+                swap(cards[j], cards[j + 1]);
+}
+
+void removeCard(const PokemonCard cards[], int& count)
+{
+    string name;
+    cout << "Enter name to remove: ";
+    getline(cin, name);
+
+    int index = linearSearch(cards, count, name);
+
+    if (index == -1) {
+        cout << "Card not found.\n";
+        return;
+    }
+}
+
+    void displayMenu()
+{
+    cout << endl << "---- Welcome to the Pokemon Cards Inventory ----" << endl;
+    cout << "1. Add Cards\n2. Display Cards\n3. Search Card\n4. Sort by Value\n";
+    cout << "5. Remove Card\n6. Exit\nChoice: ";
+}
