@@ -42,6 +42,10 @@ int main() {
     int choice;
 
     do {
+        displayMenu();
+        cin >> choice;
+        cin.ignore();
+
         if (choice == 1) {
             addCard(cards, count);
         }
