@@ -41,6 +41,8 @@ int main() {
     int count = 0;
     int choice;
 
+    cout << fixed << setprecision(2);
+
     do {
         displayMenu();
         cin >> choice;
@@ -117,6 +119,8 @@ void displayCards(const PokemonCard cards[], int count)
         cout << "No cards to display.\n"; 
         return; 
     }
+
+    cout << fixed << setprecision(2);
     for (int i = 0; i < count; i++)
         cout << i + 1 << ". " << cards[i].name << " | "
         << cards[i].type << " | $" << cards[i].cost
