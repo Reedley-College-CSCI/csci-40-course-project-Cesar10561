@@ -89,8 +89,9 @@ int main() {
         return 0;
     }
 
-    void addCard(PokemonCard cards[], int& count)
+void addCard(PokemonCard cards[], int& count)
 {
+
     if (count >= MAX_SIZE) {
         cout << "Collection is too full!!!";
         return;
@@ -101,7 +102,7 @@ int main() {
     cout << "Enter Type of Pokemon: ";
     getline(cin, cards[count].type);
 
-    cout << "Enter Cost of Card: ";
+    cout << "Enter Cost of Card:$ ";
     cin >> cards[count].cost;
     cin.ignore();
 
@@ -119,8 +120,6 @@ void displayCards(const PokemonCard cards[], int count)
         cout << "No cards to display.\n"; 
         return; 
     }
-
-    cout << fixed << setprecision(2);
     for (int i = 0; i < count; i++)
         cout << i + 1 << ". " << cards[i].name << " | "
         << cards[i].type << " | $" << cards[i].cost
