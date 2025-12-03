@@ -61,7 +61,7 @@ int main() {
             getline(cin, name);
             int index = linearSearch(cards, count, name);
 
-            if (choice == -1)
+            if (index == -1)
                 cout << "Card not found." << endl;
 
             else
@@ -102,7 +102,7 @@ void addCard(PokemonCard cards[], int& count)
     cout << "Enter Type of Pokemon: ";
     getline(cin, cards[count].type);
 
-    cout << "Enter Cost of Card:$ ";
+    cout << "Enter Cost of Card:$";
     cin >> cards[count].cost;
     cin.ignore();
 
