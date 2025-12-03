@@ -128,9 +128,10 @@ void displayCards(const PokemonCard cards[], int count)
 
 int linearSearch(const PokemonCard cards[], int count, string name)
 {
-    for (int i = 0; i < count; i++)
-        if (cards[i].name == name)  
-        return i;
+    for (int i = 0; i < count; i++) {
+        if (cards[i].name == name)
+            return i;
+}
         return -1;
 }   
 
